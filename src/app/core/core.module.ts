@@ -24,8 +24,8 @@ import { LayoutComponent } from './components/layout/layout.component';
   exports: [
     SidebarComponent,
     HeaderComponent,
-    LayoutComponent
-
+    LayoutComponent,
+    HttpModule
   ]
 })
 export class CoreModule { }

@@ -1,0 +1,32 @@
+<div class="movies-page" fxLayout="column">
+  <div
+    class="container-cards"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="start"
+  >
+    <mat-card
+      *ngFor="let movie of $moviesData | async"
+      fxLayout="column"
+      fxFlex="calc(20% - 1rem)"
+      fxFlex.md="calc(33% - 1rem)"
+      fxFlex.sm="calc(50% - 1rem)"
+      fxFlex.xs="calc(100% - 1rem)"
+      fxLayoutGap="1rem"
+    >
+      <div>
+        <span class="title">{{ movie.title }}</span>
+      </div>
+      <div>
+        <img style="width: 100%" [src]="movie.poster" />
+      </div>
+      <div>
+        <mat-chip-list aria-label="Genre selection">
+          <mat-chip color="accent" *ngFor="let genre of movie.genre" selected>{{
+            genre
+          }}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card>
+  </div>
+</div>
